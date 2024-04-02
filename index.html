@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>calculator</title>
+    <link rel="icon" type="image/x-icon" href="./images/keys (1).png">
+</head>
+<style>
+    .cal{
+        margin-top: 100px;
+        margin-left: 300px;
+    }
+    h2{
+        text-align: center;
+    }
+    h4{
+        text-align: center;
+    }
+    #types{
+        color: rgb(185, 35, 35);
+        text-align: center;
+    }
+    .box1,.box2,.box3,.buton{
+        border-radius: 50px;
+        width: 150px;
+    }
+</style>
+<body>
+    <h2>CALCULATOR</h2>
+    <div class="cal">
+    <input class="box1" type="text" id="a" placeholder="Enter first number">
+    <input class="box2" type="text" id="b" placeholder="Enter second number">
+    <input class="box3" type="text"   id="c" placeholder="calculation type">
+    <button class="buton" onclick="calculations()">=</button>
+    <p id="result"></p>
+
+    <script>
+        function calculations() 
+        {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let c = document.getElementById("c").value;
+          
+            switch (c)
+            {
+                case "add":
+                    {
+                       result= a+b;
+                       break;
+                    }
+                case "sub":
+                    {
+                        result= a-b;
+                        break;
+                    }
+                case "mul":
+                     {
+                        result=a*b;
+                        break;
+                     }
+                case "divide":
+                    {
+                        result=a/b;
+                        break;
+                    }
+            
+            }
+        
+           document.getElementById("result").textContent = "Answer is: " + result;
+           
+        }
+    </script>
+    </div>
+    <h4>CALCULATION TYPES</h4>
+    <p id="types">add sub mul divide</p>
+</body>
+</html>
